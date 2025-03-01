@@ -1,13 +1,20 @@
-//add package
 package com.pingStream.pingStream.service;
 
+import com.pingStream.pingStream.model.Notification.NotificationStatus;
+import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pingStream.pingStream.model.Notification;
+import com.pingStream.pingStream.model.Notification.Notification;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Service
+@Slf4j
 public class NotificationService {
-    
+
     @Autowired
     private NotificationRepository notificationRepository;
 
@@ -19,14 +26,14 @@ public class NotificationService {
 
     @Autowired
     private PushNotificationService pushNotificationService;
-    
+
     @Transactional
     public UUID sendNotification(Notification notification) {
         notification.setId(UUID.randomUUID());
         notification.setStatus(NotificationStatus.PENDING);
         notification.setCreatedAt(LocalDateTime.now());
         notificationRepository.save(notification);
-        
+
         processNotification(notification);
         return notification.getId();
     }
@@ -51,8 +58,7 @@ public class NotificationService {
             notification.setStatus(NotificationStatus.FAILED);
             notification.setErrorMessage(e.getMessage());
             // You might want to log the error here
-            throw new NotificationProcessingException("Failed to process notification", e);
         }
+        notificationRepository.save(notification);
     }
-    notificationRepository.save(notification);
 }

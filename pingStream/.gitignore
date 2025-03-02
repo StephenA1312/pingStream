@@ -12,7 +12,6 @@ build/
 .project
 .settings
 .springBeans
-.env
 
 .sts4-cache
 bin/
@@ -37,3 +36,5 @@ out/
 
 ### VS Code ###
 .vscode/
+*.env
+.env

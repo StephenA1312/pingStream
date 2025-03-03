@@ -24,15 +24,15 @@ PingStream is a notification service application built with Spring Boot. It curr
     AHASEND_API_URL=your_api_url
     ```
 
-//Currently disabled, no need to touch this
 3. Configure the database in `src/main/resources/application.properties`:
+     //Currently disabled, no need to touch this
     ```properties
     spring.datasource.url=jdbc:postgresql://localhost:5432/notifications
     spring.datasource.username=yourusername
     spring.datasource.password=yourpassword
     ```
 
-4. Build and run the project:
+5. Build and run the project:
     ```sh
     ./gradlew build
     ./gradlew bootRun

@@ -1,6 +1,7 @@
 # PingStream
 
 PingStream is a notification service application built with Spring Boot. It currently supports sending notifications via email using the AHASEND API.
+TODO : Add SMS  and push Notification support
 
 ## Getting Started
 

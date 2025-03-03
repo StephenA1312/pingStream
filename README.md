@@ -23,7 +23,7 @@ TODO : Add SMS  and push Notification support
     env
    ```
     AHASEND_API_KEY=your_api_key
-    AHASEND_API_URL=your_api_url
+    AHASEND_API_URL=AHASEND_API_URL=https://api.ahasend.com/v1/email/send
     ```
 
 4. Configure the database in `src/main/resources/application.properties`:

@@ -37,5 +37,3 @@ PingStream is a notification service application built with Spring Boot. It curr
     ./gradlew build
     ./gradlew bootRun
     ```
-
-## Usage
